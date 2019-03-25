@@ -1,3 +1,59 @@
-<p>
-  login works!
-</p>
+<div fxFlex="60" class="blue" fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="90"> 
+    <div fxFlex="20" fxLayoutAlign="center center">
+      <h2>Mon espace personnel</h2>
+    </div>
+    <mat-card  fxLayout="column" fxLayoutAlign="center center" class="login-card" fxFlex="70" >
+        <form [formGroup]="myForm" (ngSubmit)="login(myForm)">
+          <mat-card-content fxLayout="column " fxLayoutAlign="center center" fxLayoutGap="10px">
+  
+              <mat-form-field>
+                  <input
+                    id="email"
+                    type="email"
+                    matInput
+                    name="email"
+                    formControlName="email"
+                    placeholder="Votre adresse email"
+                    required
+                  />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input
+                      id="password"
+                      matInput
+                      name="password"
+                      formControlName="password"
+                      placeholder="Votre mot de passe"
+                      required
+                    />
+                  </mat-form-field>
+  
+          </mat-card-content>
+          <mat-card-actions>
+  
+              <button mat-flat-button color="warn" [disabled]="!myForm.valid" (click)="login()">
+                  Connexion
+                </button>
+            <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+      <div fxFlex="20" fxLayoutAlign="center center">
+          <p>Mot de passe oublié ?</p>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
