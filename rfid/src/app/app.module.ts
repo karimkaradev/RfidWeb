@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
@@ -29,12 +30,15 @@ const JWT_Module_Options: JwtModuleOptions = {
 };
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    TestComponent
+    TestComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
