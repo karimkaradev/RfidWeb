@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthenticationService {
 
 
+    isAuthentified$: Observable<boolean>;
     private host: string = 'https://localhost:44351';
     jwtToken: string;
     routeNavigation: string;

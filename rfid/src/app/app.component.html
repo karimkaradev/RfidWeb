@@ -1,30 +1,69 @@
-<div fxFlexFill  fxLayout="column" >
-  <mat-toolbar fxFlex="72px" color="primary">
-        <mat-toolbar-row>
-          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="warn">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>
-          <span><img src="../../../assets/logoSport24.jpg" alt="logo salle"></span>
-          <a mat-list-item routerLink='/home'>login</a>
-          <a mat-list-item routerLink='/home'>logout</a>
-        </mat-toolbar-row>
+<div fxFlexFill fxLayout="column">
+  <mat-toolbar fxFlex="72px" color="warning">
+    <mat-toolbar-row fxFlex="80">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        color="warn"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span
+        ><!--<img src="../../../assets/logoSport24.jpg" alt="logo salle"/>-->
+        <h2>Sport24</h2></span
+      >
+      <span style="margin-left: 20px; font-size: 0.7em"
+        >La salle de sport nouvelle génération</span
+      >
+    </mat-toolbar-row>
+    <mat-toolbar-row fxFlex="20">
+      <a *ngIf="!IsAuthentified" mat-list-item routerLink="/login"
+        ><i class="fas fa-sign-in-alt icons"></i
+      ></a>
+      <a mat-list-item routerLink="/home"
+        ><i class="fas fa-sign-out-alt icons"></i
+      ></a>
+    </mat-toolbar-row>
   </mat-toolbar>
-  <mat-sidenav-container fxFlex  fxLayout="row" >
-        <!-- *ngIf="IsAuthentified"-->
-    <mat-sidenav #drawer mode="side"fxFlex='300px' opened role="navigation" >
-      <mat-nav-list>
-        <a mat-list-item routerLink='/home'>home</a>
-        <a mat-list-item routerLink='/client'>membres</a>
-        <a mat-list-item routerLink='/admin'>Employes</a>
-      </mat-nav-list>
+  <mat-sidenav-container fxFlex fxLayout="row">
+    <!-- *ngIf="IsAuthentified"-->
+    <mat-sidenav #drawer mode="side" fxFlex="300px" opened role="navigation">
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node
+          *matTreeNodeDef="let node"
+          matTreeNodeToggle
+          matTreeNodePadding
+        >
+          <button mat-icon-button disabled></button>
+          <a [routerLink]="node.type" >{{ node.name }}</a>
+        </mat-tree-node>
+
+        <mat-tree-node
+          *matTreeNodeDef="let node; when: hasChild"
+          matTreeNodePadding
+        >
+          <button
+            mat-icon-button
+            matTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.name"
+          >
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{
+                treeControl.isExpanded(node) ? "expand_more" : "chevron_right"
+              }}
+            </mat-icon>
+          </button>
+          <a [routerLink]="node.type" >{{ node.name }}</a>
+          
+        </mat-tree-node>
+      </mat-tree>
     </mat-sidenav>
     <mat-sidenav-content fxFlex fxLayout="column">
-   
-        <router-outlet></router-outlet>
-    
-     
-    
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
 <app-footer></app-footer>

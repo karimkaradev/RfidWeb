@@ -1,3 +1,54 @@
-<p>
-  Voici la page admin
-</p>
+<h2>Création de cours</h2>
+
+
+<form #coursForm="ngForm" (ngSubmit)="submit(coursForm.value)">
+  
+<mat-vertical-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Veuillez entrer le type de cours à ajouter</ng-template>
+          <mat-form-field>
+              <mat-label>Type de cours</mat-label>
+              <mat-select formControlName="firstCtrl" required>
+                <mat-option *ngFor="let cours of typeCours" [value]="cours.idTypeCours">
+                  {{cours.libelle}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </form>
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Entrez le nombre maximum de participants</ng-template>
+            <mat-form-field>
+              <input matInput type="number" placeholder="nbre participants" formControlName="secondCtrl" required min="1" max="20">
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Suivant</button>
+            </div>
+          </form>
+      </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Choisir la date du cours</ng-template>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choisir une date" formControlName="secondCtrl">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Retour</button>
+        <button mat-button matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Ok</ng-template>
+    Tous les champs sont renseigné, vous pouvez valider
+    <div>
+      <button mat-button matStepperPrevious>Retour</button>
+      <button type="submit" mat-button >Valider</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+
+
+</form>
