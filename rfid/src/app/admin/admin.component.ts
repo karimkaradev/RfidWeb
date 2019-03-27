@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, Form } from '@angular/forms';
 import { TypeCours } from '../models/TypeCours';
+import { fakeTypeCours } from 'src/assets/fake_typecours';
 
 @Component({
   selector: 'app-admin',
@@ -12,17 +13,13 @@ export class AdminComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  typeCours: TypeCours[] = [
-    {idTypeCours: 1, libelle: 'Fitness'},
-    {idTypeCours: 2, libelle: 'Musculation'},
-    {idTypeCours: 3, libelle: 'Aquabike'}
-  ];
+  typeCours: TypeCours[] ;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
 
-  
+  this.typeCours=fakeTypeCours;
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

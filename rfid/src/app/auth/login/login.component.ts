@@ -48,4 +48,8 @@ export class LoginComponent implements OnInit {
       this.submitted = true;
     });
   }
+
+  onCancel(){
+    throw expect
+  }
 }
