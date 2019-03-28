@@ -15,7 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { PublicComponent } from './public/public.component';
+
 
 
 export function tokenGetter() {
@@ -37,7 +37,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
-    PublicComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -51,6 +51,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     MaterialModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
+
   providers: [JwtHelperService, AuthGardService],
   bootstrap: [AppComponent]
 })

@@ -5,11 +5,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { TestComponent } from './test/test/test.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
   {path: 'test', component: TestComponent},
   {path: 'client', loadChildren: './client/client.module#ClientModule'},
-  {path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
+  {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  {path: 'home', loadChildren: './public/public.module#PublicModule'}
 ];
 
 @NgModule({
