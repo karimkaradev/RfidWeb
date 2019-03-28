@@ -40,7 +40,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
-    PublicComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -55,6 +55,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     SlideshowModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
+
   providers: [JwtHelperService, AuthGardService],
   bootstrap: [AppComponent]
 })

@@ -5,12 +5,15 @@ import { PublicRoutingModule } from './public-routing.module';
 import { CourslistComponent } from './courslist/courslist.component';
 import { CoursdetailComponent } from './coursdetail/coursdetail.component';
 import { TarifComponent } from './tarif/tarif.component';
+import { PublicComponent } from './public.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
-  declarations: [CourslistComponent, CoursdetailComponent, TarifComponent],
+  declarations: [PublicComponent, CourslistComponent, CoursdetailComponent, TarifComponent],
   imports: [
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    MaterialModule
   ]
 })
 export class PublicModule { }

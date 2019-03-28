@@ -1,7 +1,17 @@
 export const files = [
     {
       name: 'home',
-      type: '/home'
+      type: '',
+      children: [
+        {
+          name: 'nos cours',
+          type: '/home/cours'
+        },
+        {
+          name: 'les abonnements',
+          type: '/home/abonnements'
+        }
+      ]
     },
     {
       name: 'client',
