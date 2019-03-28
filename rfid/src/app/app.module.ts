@@ -16,6 +16,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PublicComponent } from './public/public.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
+
+
 
 
 export function tokenGetter() {
@@ -49,6 +52,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     AngularFontAwesomeModule,
     FlexLayoutModule,
     MaterialModule,
+    SlideshowModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [JwtHelperService, AuthGardService],

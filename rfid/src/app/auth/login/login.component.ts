@@ -27,10 +27,7 @@ export class LoginComponent implements OnInit {
   login(form: NgForm){
 
     this.submitted = true;
-
-    if(this.myForm.invalid) {
-      return;
-    }
+    console.log(form.value.password);
 
     let username = form.value.email;
     let password = form.value.password;
@@ -50,6 +47,6 @@ export class LoginComponent implements OnInit {
   }
 
   onCancel(){
-    throw expect
+    //throw expect;
   }
 }
