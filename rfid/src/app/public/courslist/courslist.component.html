@@ -1,3 +1,4 @@
+
 <h1>liste des cours</h1>
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
     <mat-card fxFlex="18" fxFlex.md="28" fxFlex.sm="40" fxFlex.xs="90" *ngFor="let cours of typeCours">
@@ -7,12 +8,13 @@
         </mat-card-header>
         <img mat-card-image src="https://source.unsplash.com/random/800x600">
         <mat-card-content>
-            <p>create cours courte description</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+               A atque nulla provident autem at omnis rerum nemo recusandae aut dolorem...
+
+            </p>
         </mat-card-content>
-        <mat-action-list align="right">
-            <button (click)="more(cours)" color="primary" mat-fab>
-                <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
-            </button>
+        <mat-action-list align="center">
+            <button (click)="more(cours)" mat-raised-button color="primary" >Détail</button>
         </mat-action-list>
     </mat-card>
 </div>
