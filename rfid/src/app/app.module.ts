@@ -15,8 +15,8 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { PublicComponent } from './public/public.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
 
 
 
@@ -40,6 +40,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
+    ShowIfLoggedInDirective
     
   ],
   imports: [
@@ -53,6 +54,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     FlexLayoutModule,
     MaterialModule,
     SlideshowModule,
+    ShowIfLoggedInDirective,
     JwtModule.forRoot(JWT_Module_Options)
   ],
 

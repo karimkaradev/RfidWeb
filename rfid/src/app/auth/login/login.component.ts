@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login(form: NgForm){
+  login2(form: NgForm){
 
     this.submitted = true;
     console.log(form.value.password);
@@ -45,7 +45,9 @@ export class LoginComponent implements OnInit {
       this.submitted = true;
     });
   }
-
+login(form){
+  this.jwtService.login(form).subscribe();
+}
   onCancel(){
     
   }
