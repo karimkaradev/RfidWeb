@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { fakeTypeCours } from 'src/assets/fake_typecours';
+import { TypeCours } from 'src/app/models/TypeCours';
 
 
 @Component({
@@ -7,13 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
-
   
+  constructor() { }
 
   ngOnInit() {
-    
-   
-  }
- 
-}
 
+  }
+
+
+
+}

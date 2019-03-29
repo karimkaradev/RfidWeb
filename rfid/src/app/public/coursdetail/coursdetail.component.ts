@@ -11,5 +11,5 @@ export class CoursdetailComponent implements OnInit {
 
   ngOnInit() {
   }
-
+more(){}
 }
