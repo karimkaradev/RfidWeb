@@ -1,16 +1,17 @@
-import { Directive, Input, OnDestroy } from '@angular/core';
+import { Directive, Input, OnDestroy, OnInit } from '@angular/core';
 import { TemplateRef, ViewContainerRef } from '@angular/core';
-import { Observable, Subscription } from "rxjs";
+import { Observable, Subscription } from 'rxjs';
 import { SessionQuery } from './auth/+state/session.query';
 
+// tslint:disable-next-line:directive-selector
 @Directive({ selector: '[showIfLoggedIn]' })
-export class ShowIfLoggedInDirective implements OnDestroy {
+export class ShowIfLoggedInDirective implements OnInit, OnDestroy {
   subscription: Subscription;
   @Input() showIfLoggedIn: boolean;
 
   constructor(private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef,
-    private authQuery: SessionQuery
+              private viewContainer: ViewContainerRef,
+              private authQuery: SessionQuery
   ) {
   }
 

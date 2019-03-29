@@ -4,16 +4,19 @@ import { SessionDataService } from './session-data.service';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
-	providedIn: 'root'
+providedIn: 'root'
 })
 export class SessionService {
-	constructor(private authStore: SessionStore, private authDataService: SessionDataService) { }
 
-	login(creds) {
-		return this.authDataService.login(creds).pipe(tap((session) => this.authStore.login(session)));
-	}
+constructor(
+private authStore: SessionStore,
+private authDataService: SessionDataService) { }
 
-	logout() {
-		this.authStore.logout();
-	}
+login(creds) {
+return this.authDataService.login(creds).pipe(tap((session) => this.authStore.login(session)));
+}
+
+logout() {
+this.authStore.logout();
+}
 }

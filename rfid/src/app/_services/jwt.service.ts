@@ -10,14 +10,14 @@ export class AuthenticationService {
 
 
     isAuthentified$: Observable<boolean>;
-    private host: string = 'https://localhost:44351';
+    private host = 'https://localhost:44351';
     jwtToken: string;
     routeNavigation: string;
 
     constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {
      }
 
-     //exemple akita auth
+     // exemple akita auth
      login(creds) {
       return timer(300).pipe(mapTo({ token: 'token', name: 'Inbal Sinai' }));
     }
@@ -31,24 +31,24 @@ export class AuthenticationService {
         this.jwtToken = jwt;
       }
 
-      loadToken(){
+      loadToken() {
         this.jwtToken = localStorage.getItem('token');
       }
 
-      logout(){
+      logout() {
         localStorage.removeItem('token');
         this.jwtToken = null;
       }
 
 
       isValid(): boolean {
-        if(this.jwtToken == null) {
+        if (this.jwtToken == null) {
           this.loadToken();
         }
         return !this.jwtHelper.isTokenExpired(this.jwtToken);
       }
 
-      getToken(){
+      getToken() {
         return this.jwtToken;
       }
 }
