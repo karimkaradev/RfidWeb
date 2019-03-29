@@ -9,9 +9,9 @@ import { IImage } from 'ng-simple-slideshow';
 export class HomeComponent implements OnInit {
 
   imageUrls: (string | IImage)[] = [
-    { url: '../../../assets/images/slider1.jpg', caption: 'des dizaines de sport proposés', href: '#config' },
-    { url: '../../../assets/images/slider2.jpg', clickAction: () => alert('custom click function') },
-    { url: '../../../assets/images/slider3.jpg', caption: 'Une salle ouverte en permanence', href: '#' },
+    { url: '../../../assets/images/slider1.jpg', caption: 'Fitness, Aquabike, Musculation, ...', href: '#config' },
+    { url: '../../../assets/images/slider2.jpg', caption: 'Inscrivez-vous vite', clickAction: () => alert('custom click function') },
+    { url: '../../../assets/images/slider3.jpg', caption: 'Un personnel qualifié à votre service', href: '#' },
   ];
   height: string = '500px';
   minHeight: string;
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   showArrows: boolean = true;
   disableSwiping: boolean = false;
   autoPlay: boolean = true;
-  autoPlayInterval: number = 9999;
+  autoPlayInterval: number = 15000;
   stopAutoPlayOnSlide: boolean = true;
   debug: boolean = false;
   backgroundSize: string = 'cover';
