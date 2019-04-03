@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { fakeTypeCours } from 'src/assets/fake_typecours';
 import { TypeCours } from 'src/app/models/TypeCours';
+import { timer } from 'rxjs';
 
 
 @Component({
@@ -10,10 +11,12 @@ import { TypeCours } from 'src/app/models/TypeCours';
 })
 export class TestComponent {
   
-  constructor() { }
+  flipped = false;
+  imgSrc = "../../../assets/images/home-img1.jpg"
 
-  ngOnInit() {
-
+  flipIt() {
+    this.flipped = !this.flipped;
+    timer(3000);
   }
 
 

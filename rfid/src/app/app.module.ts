@@ -9,7 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
+import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AuthGardService } from './auth/guards/auth-gard.service';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -20,6 +20,7 @@ import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
 import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { IfRoleDirective } from './auth/if-role.directive';
+import { ResponsiveDirective } from './directive/responsive.directive';
 
 
 
@@ -27,7 +28,7 @@ export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 
-const JwtModuleOptions: JwtModuleOptions = {
+const jwtModuleOptions: JwtModuleOptions = {
   config: {
       tokenGetter,
       whitelistedDomains: ['http://192.168.1.174']
@@ -43,7 +44,8 @@ const JwtModuleOptions: JwtModuleOptions = {
     TestComponent,
     FooterComponent,
     ShowIfLoggedInDirective,
-    IfRoleDirective
+    IfRoleDirective,
+    ResponsiveDirective
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,7 @@ const JwtModuleOptions: JwtModuleOptions = {
     FlexLayoutModule,
     MaterialModule,
     SlideshowModule,
-    JwtModule.forRoot(JwtModuleOptions),
+    JwtModule.forRoot(jwtModuleOptions),
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
 
