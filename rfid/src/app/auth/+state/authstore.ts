@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 import * as storage from '../storage';
 
-export interface SessionState {
+export interface AuthState {
   token: string;
   name: string;
 }
 
-export function createInitialSessionState(): SessionState {
+export function createInitialSessionState(): AuthState {
   return {
     token: null,
     name: null,
@@ -17,12 +17,12 @@ export function createInitialSessionState(): SessionState {
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'session' })
-export class SessionStore extends Store<SessionState> {
+export class AuthStore extends Store<AuthState> {
   constructor() {
     super(createInitialSessionState());
   }
 
-  login(session: SessionState) {
+  login(session: AuthState) {
     this.update(session);
     storage.saveSession(session);
   }

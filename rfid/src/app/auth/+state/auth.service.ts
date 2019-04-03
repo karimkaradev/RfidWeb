@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { SessionStore } from './session.store';
+import { AuthStore } from './authstore';
 import { SessionDataService } from './session-data.service';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
 providedIn: 'root'
 })
-export class SessionService {
+export class AuthService {
 
 constructor(
-private authStore: SessionStore,
+private authStore: AuthStore,
 private authDataService: SessionDataService) { }
 
 login(creds) {

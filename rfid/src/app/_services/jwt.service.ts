@@ -4,6 +4,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Users } from '../models/users';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
+import decode from 'jwt-decode';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -13,6 +14,8 @@ export class AuthenticationService {
     private host = 'https://localhost:44351';
     jwtToken: string;
     routeNavigation: string;
+    // VERIFIER AUTRE SOLUTION POUR RECUPERER ROLE
+    role = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role';
 
     constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {
      }
@@ -50,5 +53,10 @@ export class AuthenticationService {
 
       getToken() {
         return this.jwtToken;
+      }
+
+      hasRole(expectedRole:string){
+        const tokenPayload = decode(this.jwtToken);
+       return (this.isValid() && tokenPayload[this.role].includes(expectedRole)) 
       }
 }

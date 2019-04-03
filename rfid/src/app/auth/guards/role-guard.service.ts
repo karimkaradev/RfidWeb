@@ -5,15 +5,13 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { AuthenticationService } from 'src/app/_services/jwt.service';
-import decode from 'jwt-decode';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleGuardService implements CanActivate {
 
-  // VERIFIER AUTRE SOLUTION POUR RECUPERER ROLE
-  role = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role';
 
   constructor(public auth: AuthenticationService, public router: Router) { }
 
@@ -22,14 +20,12 @@ export class RoleGuardService implements CanActivate {
     // on the data property
     const expectedRole = route.data.expectedRole;
 
-    const token = localStorage.getItem('token');
+    
 
     // decode the token to get its payload
-    const tokenPayload = decode(token);
-    console.log(tokenPayload);
-    if (
-      !this.auth.isValid() ||
-      !tokenPayload[this.role].includes(expectedRole)
+   
+    if (!this.auth.hasRole(expectedRole)
+     
     ) {
       this.router.navigate(['/login']);
       return false;

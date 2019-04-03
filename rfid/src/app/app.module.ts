@@ -19,6 +19,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
 import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { IfRoleDirective } from './auth/if-role.directive';
 
 
 
@@ -41,7 +42,8 @@ const JwtModuleOptions: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
-    ShowIfLoggedInDirective
+    ShowIfLoggedInDirective,
+    IfRoleDirective
   ],
   imports: [
     BrowserModule,
