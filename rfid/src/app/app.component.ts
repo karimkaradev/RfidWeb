@@ -5,7 +5,7 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'
 import { of as observableOf } from 'rxjs';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { files } from '../assets/menu-data';
-import { SessionService } from './auth/+state';
+import { AuthService } from './auth/+state';
 
 
 /** File node data with nested structure. */
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
 
 
   constructor(private jwtHelper: JwtHelperService,
-              private router: Router, private sessionService: SessionService) {
+              private router: Router, private authService: AuthService) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -113,6 +113,6 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/login']);
 }
 logOut2() {
-  this.sessionService.logout();
+  this.authService.logout();
 }
 }
