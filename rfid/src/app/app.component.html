@@ -54,10 +54,10 @@
                 >La salle de sport nouvelle génération</span
               >
             </mat-toolbar-row>
-            <mat-toolbar-row fxFlex="20">
-              <a *ngIf="!isAuthentified" mat-list-item routerLink="/login"
+            <mat-toolbar-row fxFlex="20" >
+              <a *showIfLoggedIn='false' mat-list-item routerLink="/login"
                 ><i class="fas fa-user icons"></i></a>
-              <a mat-list-item routerLink="/home"
+              <a *showIfLoggedIn='true'mat-list-item (click)="logOut2()"
                 ><i class="far fa-window-close icons"></i></a>
             </mat-toolbar-row>
           </mat-toolbar>

@@ -15,9 +15,11 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { PublicComponent } from './public/public.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
-
+import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
+import { environment } from 'src/environments/environment';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { IfRoleDirective } from './auth/if-role.directive';
 
 
 
@@ -25,7 +27,7 @@ export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 
-const JWT_Module_Options: JwtModuleOptions = {
+const JwtModuleOptions: JwtModuleOptions = {
   config: {
       tokenGetter,
       whitelistedDomains: ['http://192.168.1.174']
@@ -40,7 +42,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
-    
+    ShowIfLoggedInDirective,
+    IfRoleDirective
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     FlexLayoutModule,
     MaterialModule,
     SlideshowModule,
-    JwtModule.forRoot(JWT_Module_Options)
+    JwtModule.forRoot(JwtModuleOptions),
+    environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
 
   providers: [JwtHelperService, AuthGardService],
