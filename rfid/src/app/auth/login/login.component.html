@@ -1,4 +1,4 @@
-<div fxFlex="60" class="blue" fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="90"> 
+<div fxFlex="80" class="blue" fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="90"> 
     <div fxFlex="20" fxLayoutAlign="center center">
       <h2>Mon espace personnel</h2>
     </div>
@@ -32,7 +32,7 @@
           </mat-card-content>
           <mat-card-actions>
   
-              <button mat-flat-button color="warn" [disabled]="!myForm.valid" (click)="login()">
+              <button mat-flat-button color="warn" [disabled]="!myForm.valid" (click)="login(myForm)">
                   Connexion
                 </button>
             <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>
