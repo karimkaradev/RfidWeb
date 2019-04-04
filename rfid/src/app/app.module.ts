@@ -21,6 +21,7 @@ import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { IfRoleDirective } from './auth/if-role.directive';
 import { ResponsiveDirective } from './directive/responsive.directive';
+import { MediaqueryComponent } from './mediaquery/mediaquery.component';
 
 
 
@@ -45,7 +46,8 @@ const jwtModuleOptions: JwtModuleOptions = {
     FooterComponent,
     ShowIfLoggedInDirective,
     IfRoleDirective,
-    ResponsiveDirective
+    ResponsiveDirective,
+    MediaqueryComponent
   ],
   imports: [
     BrowserModule,

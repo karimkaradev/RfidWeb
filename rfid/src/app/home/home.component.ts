@@ -8,6 +8,11 @@ import { IImage } from 'ng-simple-slideshow';
 })
 export class HomeComponent implements OnInit {
 
+  flipped = false;
+  flipped2 = false;
+  flipped3 = false;
+  imgSrc = "../../../assets/images/activity.jpg"
+
   imageUrls: (string | IImage)[] = [
     { url: '../../../assets/images/slider1.jpg', caption: 'Fitness, Aquabike, Musculation, ...', href: '#config' },
     { url: '../../../assets/images/slider2.jpg', caption: 'Inscrivez-vous vite', clickAction: () => alert('custom click function') },
@@ -38,5 +43,17 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     
    
+  }
+
+  flipIt() {
+    this.flipped = !this.flipped;
+  }
+
+  flipIt2(){
+    this.flipped2 = !this.flipped2;
+  }
+
+  flipIt3(){
+    this.flipped3 = !this.flipped3;
   }
 }
