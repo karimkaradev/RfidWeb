@@ -9,15 +9,20 @@ import { LoginComponent } from './auth/login/login.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
+import { JwtModule, JwtHelperService, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AuthGardService } from './auth/guards/auth-gard.service';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { PublicComponent } from './public/public.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
-
+import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
+import { environment } from 'src/environments/environment';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { IfRoleDirective } from './auth/if-role.directive';
+import { ResponsiveDirective } from './directive/responsive.directive';
+import { MediaqueryComponent } from './mediaquery/mediaquery.component';
+import { DecouverteComponent } from './decouverte/decouverte.component';
 
 
 
@@ -25,7 +30,7 @@ export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 
-const JWT_Module_Options: JwtModuleOptions = {
+const jwtModuleOptions: JwtModuleOptions = {
   config: {
       tokenGetter,
       whitelistedDomains: ['http://192.168.1.174']
@@ -52,7 +57,11 @@ const JWT_Module_Options: JwtModuleOptions = {
     FlexLayoutModule,
     MaterialModule,
     SlideshowModule,
-    JwtModule.forRoot(JWT_Module_Options)
+    JwtModule.forRoot(jwtModuleOptions),
+    environment.production ? [] : AkitaNgDevtools.forRoot()
+  ],
+  entryComponents:[
+    DecouverteComponent
   ],
 
   providers: [JwtHelperService, AuthGardService],

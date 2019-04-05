@@ -30,5 +30,9 @@ export const files = [
         { name: 'ajouter un client', type: 'admin/addclient' },
         { name: 'ajouter un cours', type: 'admin' }
       ]
+    },
+    {
+      name: 'test',
+      type: '/test'
     }
   ];

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IImage } from 'ng-simple-slideshow';
+import { MatDialog } from '@angular/material';
+import { DecouverteComponent } from '../decouverte/decouverte.component';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,11 @@ import { IImage } from 'ng-simple-slideshow';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  flipped = false;
+  flipped2 = false;
+  flipped3 = false;
+  imgSrc = "../../../assets/images/activity.jpg"
 
   imageUrls: (string | IImage)[] = [
     { url: '../../../assets/images/slider1.jpg', caption: 'Fitness, Aquabike, Musculation, ...', href: '#config' },
@@ -35,8 +42,29 @@ export class HomeComponent implements OnInit {
   width: string = '100%';
   fullscreen: boolean = false;
 
-  ngOnInit() {
-    
-   
+  constructor(private matdialog: MatDialog) {
+
   }
+
+  ngOnInit() {
+  }
+
+  flipIt() {
+    this.flipped = !this.flipped;
+  }
+
+  flipIt2(){
+    this.flipped2 = !this.flipped2;
+  }
+
+  flipIt3(){
+    this.flipped3 = !this.flipped3;
+  }
+
+
+  onClick(){
+    this.matdialog.open(DecouverteComponent, {disableClose:true})
+  }
+
+
 }

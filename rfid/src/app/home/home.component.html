@@ -1,80 +1,165 @@
-<div style="display:block;"
-       [style.width]="width">
-    <slideshow #slideshow
-               [imageUrls]="imageUrls"
-               [height]="height"
-               [minHeight]="minHeight"
-               [arrowSize]="arrowSize"
-               [showArrows]="showArrows"
-               [disableSwiping]="disableSwiping"
-               [autoPlay]="autoPlay"
-               [stopAutoPlayOnSlide]="stopAutoPlayOnSlide"
-               [debug]="debug"
-               [backgroundSize]="backgroundSize"
-               [backgroundPosition]="backgroundPosition"
-               [backgroundRepeat]="backgroundRepeat"
-               [showDots]="showDots"
-               [dotColor]="dotColor"
-               [showCaptions]="showCaptions"
-               [captionColor]="captionColor"
-               [captionBackground]="captionBackground"
-               [lazyLoad]="lazyLoad"
-               [hideOnNoSlides]="hideOnNoSlides"
-               [fullscreen]="fullscreen">
-    </slideshow>
-  </div>
+<div fxFlex fxHide.lt-md>
+    <div style="display:block;"
+    [style.width]="width">
+ <slideshow #slideshow
+            [imageUrls]="imageUrls"
+            [height]="height"
+            [minHeight]="minHeight"
+            [arrowSize]="arrowSize"
+            [showArrows]="showArrows"
+            [disableSwiping]="disableSwiping"
+            [autoPlay]="autoPlay"
+            [stopAutoPlayOnSlide]="stopAutoPlayOnSlide"
+            [debug]="debug"
+            [backgroundSize]="backgroundSize"
+            [backgroundPosition]="backgroundPosition"
+            [backgroundRepeat]="backgroundRepeat"
+            [showDots]="showDots"
+            [dotColor]="dotColor"
+            [showCaptions]="showCaptions"
+            [captionColor]="captionColor"
+            [captionBackground]="captionBackground"
+            [lazyLoad]="lazyLoad"
+            [hideOnNoSlides]="hideOnNoSlides"
+            [fullscreen]="fullscreen">
+ </slideshow>
+</div>
 
-  <div flexLayout="column">
-    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="jumbotron" fxFlex="100">
-      <h1>JOURNEE DECOUVERTE GRATUITE</h1>
-      <button mat-flat-button color="warn">J'en profite !</button>
-    </div>
+<div flexLayout="column">
+ <div fxLayout="column" fxLayoutAlign="space-evenly center" class="jumbotron" fxFlex="100">
+   <h1>JOURNEE DECOUVERTE GRATUITE</h1>
+   <button mat-flat-button color="warn" (click)="onClick()">J'en profite !</button>
+ </div>
+</div>
+
+<div flexLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="40" fxLayoutAlign="center center">
+    <img class="image-home" src="../../assets/images/home-img2.jpg" alt="photo d'un sportif">
   </div>
-  
-  <div flexLayout="row" fxLayoutAlign="center">
-    <div fxFlex="40">
-      <p><img class="image-home" src="../../assets/images/home-img2.jpg" alt="photo d'un sportif"></p>
-    </div>
-    <div class="content-text" fxFlex="40">
-      <h3>NOS ACTIVITES</h3>
-      <hr class="separator">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quae, non sunt porro minima labore ullam ad quam
-        deleniti placeat nemo cum ratione, dolor quisquam nobis sapiente dolore atque qui velit animi. Excepturi ullam
-        veritatis reprehenderit vel, rem at maxime placeat quae accusantium. Explicabo libero nam sint illo quam voluptas!
-      </p>
-      <p><button mat-flat-button color="primary">Découvrez les activités</button></p>
-    </div>
+  <div fxFlex="40">
+    <h3>NOS ACTIVITES</h3>
+    <hr class="separator">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quae, non sunt porro minima labore ullam ad quam
+      deleniti placeat nemo cum ratione, dolor quisquam nobis sapiente dolore atque qui velit animi. Excepturi ullam
+      veritatis reprehenderit vel, rem at maxime placeat quae accusantium. Explicabo libero nam sint illo quam voluptas!
+    </p>
+    <p><button mat-flat-button color="primary">Découvrez les activités</button></p>
   </div>
-  
-  <div flexLayout="row" fxLayoutAlign="center">   
-    <div style="padding: 30px" fxFlex="40">
-      <h3>NOS INSTALLATIONS</h3>
-      <hr class="separator">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quae, non sunt porro minima labore ullam ad quam
-        deleniti placeat nemo cum ratione, dolor quisquam nobis sapiente dolore atque qui velit animi. Excepturi ullam
-        veritatis reprehenderit vel, rem at maxime placeat quae accusantium. Explicabo libero nam sint illo quam voluptas!
-      </p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta dolorum culpa illo voluptatibus, natus vero assumenda maiores soluta, ipsa enim nihil optio minus placeat. Repudiandae quia quidem provident suscipit? Voluptatem nulla dolores ab aliquid iure nam, iste in inventore consequuntur.</p>
-      <p><button mat-flat-button color="primary">En savoir plus</button></p>
+</div>
+
+<div flexLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="40" fxLayoutAlign="center center">
+        <img class="image-home" src="../../assets/images/home-img1.jpg" alt="photo d'un sportif">
     </div>
     <div fxFlex="40">
-        <p><img class="image-home" src="../../assets/images/home-img1.jpg" alt="photo d'un sportif"></p>
-      </div>
+        <h3>NOS INSTALLATIONS</h3>
+        <hr class="separator">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quae, non sunt porro minima labore ullam ad quam
+          deleniti placeat nemo cum ratione, dolor quisquam nobis sapiente dolore atque qui velit animi. Excepturi ullam
+          veritatis reprehenderit vel, rem at maxime placeat quae accusantium. Explicabo libero nam sint illo quam voluptas!
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta dolorum culpa illo voluptatibus, natus vero assumenda maiores soluta, ipsa enim nihil optio minus placeat. Repudiandae quia quidem provident suscipit? Voluptatem nulla dolores ab aliquid iure nam, iste in inventore consequuntur.</p>
+        <p><button mat-flat-button color="primary">En savoir plus</button></p>
+    </div>
   </div>
 
 
-  <div flexLayout="row" fxLayoutAlign="center">   
-      <button mat-flat-button color="warn">S'inscrire</button>
-    </div>
+<div flexLayout="row" fxLayoutAlign="center">   
+   <button mat-flat-button color="warn">S'inscrire</button>
+ </div>
+
+
  
 
 
-  <div flexLayout="row">
-      <div class="jumbotron" fxFlex="100">
-        <h1>TARIFS</h1>
-      </div>
-    </div>
+<div flexLayout="row" fxLayoutAlign="center cenetr">
+   <div class="jumbotron" fxFlex="100">
+     <h1>TARIFS</h1>
+   </div>
+ </div>
+</div>
+
   
+
+
+
+
+
+    <!--VIEW MOBILE ONLY -->
+
+    <div fxFlex="100" fxHide.gt-sm fxLayout="column" fxLayoutAlign="space-around center">
+        <div flexLayout="column">
+            <div fxLayout="column" fxLayoutAlign="space-evenly center" class="jumbotron" fxFlex="100">
+              <h1>JOURNEE DECOUVERTE GRATUITE</h1>
+              <button mat-flat-button color="warn" (click)="onClick()">J'en profite !</button>
+            </div>
+           </div>
+        <label>
+          <div id="player" class="player" [class.voted]="flipped" (click)="flipIt()">
+            <div class="front">
+              <p class="title">NOS ACTIVITES</p>
+              <img class="imgfront" [src]="imgSrc" />
+            </div>
+            
+            <div class="back">
+               
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
+                temporibus itaque aliquam debitis? Velit soluta nam id omnis fugiat at
+                tenetur nisi impedit fuga.
+              </p>
+              <a style="color: white; background-color: crimson; display: block; width: 150px; height: 20px; margin: auto; text-decoration: none" href="">plus d'infos</a>
+              
+              
+            </div>
+          </div>
+        </label>
+      
+        <label>
+          <div
+            id="player2"
+            class="player"
+            [class.voted]="flipped2"
+            (click)="flipIt2()"
+          >
+            <div class="front">
+              <p class="title">NOS EQUIPEMENTS</p>
+              <img class="imgfront" [src]="imgSrc" />
+            </div>
+            <div class="back">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sed
+                maxime molestiae ipsa voluptatem nam necessitatibus corporis soluta
+                aliquid eos.
+              </p>
+              <a style="color: white; background-color: crimson; display: block; width: 150px; height: 20px; margin: auto; text-decoration: none" href="">plus d'infos</a>
+            </div>
+          </div>
+        </label>
+      
+        <label>
+          <div
+            id="player2"
+            class="player"
+            [class.voted]="flipped3"
+            (click)="flipIt3()"
+          >
+            <div class="front">
+              <p class="title">NOS ABONNEMENTS</p>
+              <img class="imgfront" [src]="imgSrc" />
+            </div>
+            <div class="back">
+              <p>
+                Mollitia quibusdam veniam dolorem porro, impedit qui sit dolorum enim
+                laborum quasi obcaecati quisquam tempora dicta alias sapiente
+                necessitatibus?
+              </p>
+              <a style="color: white; background-color: crimson; display: block; width: 150px; height: 20px; margin: auto; text-decoration: none" href="">plus d'infos</a>
+            </div>
+          </div>
+        </label>
+      </div>
+      
   
  
 

@@ -7,21 +7,21 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGardService implements CanActivate {
-  path: import("@angular/router").ActivatedRouteSnapshot[];
-  route: import("@angular/router").ActivatedRouteSnapshot;
+  path: import ('@angular/router').ActivatedRouteSnapshot[];
+  route: import ('@angular/router').ActivatedRouteSnapshot;
 
   constructor(private jwtHelper: JwtHelperService, private router: Router) { }
 
   canActivate() {
-    var token = localStorage.getItem("token");
- 
-    if (token && !this.jwtHelper.isTokenExpired(token)){
+   const token = localStorage.getItem('token');
+
+   if (token && !this.jwtHelper.isTokenExpired(token)) {
       return true;
     }
 
-    
 
-    this.router.navigate(["login"]);
-    return false;
+
+   this.router.navigate(['login']);
+   return false;
   }
 }
