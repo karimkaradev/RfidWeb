@@ -5,6 +5,7 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'
 import { of as observableOf } from 'rxjs';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { files } from '../assets/menu-data';
+import { AuthService } from './auth/+state';
 
 
 /** File node data with nested structure. */
@@ -34,7 +35,8 @@ export interface TreeNode {
 
 export class AppComponent implements OnInit {
 
-  isAuthentified: boolean = false;
+  isAuthentified = false;
+
 
 
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
@@ -47,7 +49,8 @@ export class AppComponent implements OnInit {
   dataSource: MatTreeFlatDataSource<FileNode, TreeNode>;
 
 
-  constructor(private jwtHelper: JwtHelperService, private router: Router) {
+  constructor(private jwtHelper: JwtHelperService,
+              private router: Router, private authService: AuthService) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -69,7 +72,7 @@ export class AppComponent implements OnInit {
     return {
       name: node.name,
       type: node.type,
-      level: level,
+      level,
       expandable: !!node.children
     };
   }
@@ -82,7 +85,7 @@ export class AppComponent implements OnInit {
   /** Return whether the node is expanded or not. */
   isExpandable(node: TreeNode) {
     return node.expandable;
-  };
+  }
 
   /** Get the children for the node. */
   getChildren(node: FileNode) {
@@ -90,25 +93,26 @@ export class AppComponent implements OnInit {
   }
 
   /** Get whether the node has children or not. */
-  hasChild(index: number, node: TreeNode){
+  hasChild(index: number, node: TreeNode) {
     return node.expandable;
   }
 
 
 
   isUserAuthenticated() {
-    let token: string = localStorage.getItem('token');
+    const token: string = localStorage.getItem('token');
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
 
   logOut() {
     localStorage.removeItem('token');
-    this.router.navigate(["/login"]);
+    this.router.navigate(['/login']);
 }
-
+logOut2() {
+  this.authService.logout();
+}
 }

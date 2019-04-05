@@ -1,0 +1,27 @@
+
+
+
+mat-icon{
+    cursor: pointer;
+    
+}
+
+mat-icon:hover{
+    color: crimson;
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+
+
+.button{
+    margin-top: 20px;
+}
+
+h1{
+    padding: 5px;
+    margin: 0;
+}
+
+h3{
+    color: rgb(89, 89, 124);
+}
