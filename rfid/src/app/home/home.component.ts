@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IImage } from 'ng-simple-slideshow';
+import { MatDialog } from '@angular/material';
+import { DecouverteComponent } from '../decouverte/decouverte.component';
 
 @Component({
   selector: 'app-home',
@@ -40,9 +42,11 @@ export class HomeComponent implements OnInit {
   width: string = '100%';
   fullscreen: boolean = false;
 
+  constructor(private matdialog: MatDialog) {
+
+  }
+
   ngOnInit() {
-    
-   
   }
 
   flipIt() {
@@ -56,4 +60,11 @@ export class HomeComponent implements OnInit {
   flipIt3(){
     this.flipped3 = !this.flipped3;
   }
+
+
+  onClick(){
+    this.matdialog.open(DecouverteComponent, {disableClose:true})
+  }
+
+
 }

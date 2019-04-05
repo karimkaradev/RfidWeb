@@ -22,6 +22,7 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { IfRoleDirective } from './auth/if-role.directive';
 import { ResponsiveDirective } from './directive/responsive.directive';
 import { MediaqueryComponent } from './mediaquery/mediaquery.component';
+import { DecouverteComponent } from './decouverte/decouverte.component';
 
 
 
@@ -47,7 +48,8 @@ const jwtModuleOptions: JwtModuleOptions = {
     ShowIfLoggedInDirective,
     IfRoleDirective,
     ResponsiveDirective,
-    MediaqueryComponent
+    MediaqueryComponent,
+    DecouverteComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,9 @@ const jwtModuleOptions: JwtModuleOptions = {
     SlideshowModule,
     JwtModule.forRoot(jwtModuleOptions),
     environment.production ? [] : AkitaNgDevtools.forRoot()
+  ],
+  entryComponents:[
+    DecouverteComponent
   ],
 
   providers: [JwtHelperService, AuthGardService],

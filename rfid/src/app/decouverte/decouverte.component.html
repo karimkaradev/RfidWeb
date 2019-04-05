@@ -1,0 +1,39 @@
+
+
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="center center">
+  <div (click)="closeModal()" fxFlexAlign="end">
+      <mat-icon>cancel</mat-icon>
+  </div>
+    
+    <h1>Ma journée découverte</h1>
+    <h3>Tester gratuitement le cours de votre choix</h3>
+    
+    <form fxLayout="column" [formGroup]="decouverteForm" (ngSubmit)="onSubmit(decouverteForm.value)">
+        <mat-form-field>
+            <input formControlName="nom" matInput placeholder="Nom" />
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="prenom" matInput placeholder="Prénom" />
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="email" matInput placeholder="Email" />
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="telephone" matInput placeholder="Téléphone" />
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Choisir une date" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-checkbox formControlName="checkbox">accepter les conditions</mat-checkbox>
+        
+          <button class="button" mat-stroked-button color="warn" [disabled]="!decouverteForm.valid">Je teste gratuitement</button>
+
+    </form>
+      
+
+    
+
+</div>
+

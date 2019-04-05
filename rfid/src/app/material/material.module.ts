@@ -8,7 +8,10 @@ import {
   MatInputModule, MatCardModule,
   MatFormFieldControl, MatTreeModule,
   MatStepperModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSnackBarModule,
+  MatDialogModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +34,11 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     MatIconModule,
     MatSelectModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatCheckboxModule
+
         ],
 
   exports: [
@@ -50,7 +57,10 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
     MatCardModule,
     MatSelectModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
 })
 export class MaterialModule { }
