@@ -45,6 +45,11 @@ const jwtModuleOptions: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
+    ShowIfLoggedInDirective,
+    IfRoleDirective,
+    ResponsiveDirective,
+    MediaqueryComponent,
+    DecouverteComponent
   ],
   imports: [
     BrowserModule,
