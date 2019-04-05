@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
 
   isAuthentified: boolean = false;
 
- 
 
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
   treeControl: FlatTreeControl<TreeNode>;

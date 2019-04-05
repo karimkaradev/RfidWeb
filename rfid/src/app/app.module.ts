@@ -40,7 +40,6 @@ const JWT_Module_Options: JwtModuleOptions = {
     LoginComponent,
     TestComponent,
     FooterComponent,
-    
   ],
   imports: [
     BrowserModule,
