@@ -1,5 +1,5 @@
-
-<h1>liste des cours</h1>
+<div class="containerG">
+<h1>Notre offre cours!</h1>
 <div fxLayout="row wrap" fxLayoutAlign="space-around center">
     <mat-card fxFlex="18" fxFlex.md="28" fxFlex.sm="40" fxFlex.xs="90" *ngFor="let cours of typeCours">
         <mat-card-header>
@@ -17,4 +17,5 @@
             <button (click)="more(cours)" mat-raised-button color="primary" >Détail</button>
         </mat-action-list>
     </mat-card>
+</div>
 </div>

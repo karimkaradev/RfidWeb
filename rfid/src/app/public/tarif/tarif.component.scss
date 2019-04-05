@@ -1,0 +1,15 @@
+.containerG
+{
+    margin-left: 65px;
+}
+
+.list_ab{
+    display: flex;
+    flex-direction: column;
+    // background-color: bisque;
+}
+
+.list_ab > * {
+    width: 100%;
+  }
+  

@@ -9,6 +9,7 @@ import { PublicComponent } from './public.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 @NgModule({
   declarations: [PublicComponent, CourslistComponent, CoursdetailComponent, TarifComponent],
   imports: [
@@ -16,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     PublicRoutingModule,
     MaterialModule,
     FlexLayoutModule,
+
   ]
 })
 export class PublicModule { }

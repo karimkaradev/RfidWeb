@@ -1,3 +1,54 @@
-<p>
-  tarif works!
-</p>
+
+
+<!--   
+  <mat-card  fxLayout="column" fxLayoutAlign="center center" class="login-card" fxFlex="70" >
+  <mat-card-title><h2>Nos différrents abonnements</h2></mat-card-title>
+      <mat-card-content fxLayout="column " fxLayoutAlign="center center" fxLayoutGap="10px">
+
+         
+            <div class="list_ab">
+              <mat-form-field>
+                  <mat-label>numéro de badge</mat-label>
+                  <input matInput placeholder="votre id">
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-select placeholder="Select" >
+                    <mat-option  value="option">Option</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+         
+      </mat-card-content>
+      <mat-card-actions>
+
+          <button mat-flat-button color="warn" (click)="login()">
+              Valider
+            </button>
+        <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>
+      </mat-card-actions>
+  </mat-card> -->
+<div class="containerG">
+  <h1>Notre offre abonnement!</h1>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <mat-card fxFlex="18" fxFlex.md="28" fxFlex.sm="40" fxFlex.xs="90" *ngFor="let abonnement of typeAbnmt">
+            <mat-card-header>
+                <mat-card-title>
+                    {{abonnement.libelle}}</mat-card-title>
+            </mat-card-header>
+            <!-- <img mat-card-image src="https://source.unsplash.com/random/800x600"> -->
+            <mat-card-content>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  A atque nulla provident autem at omnis rerum nemo recusandae aut dolorem...
+
+                </p>
+            </mat-card-content>
+            <mat-action-list align="center">
+                <button (click)="userAbonnement()" mat-raised-button color="primary" >Je m'abonne!</button>
+            </mat-action-list>
+        </mat-card>
+    </div>
+</div>
+
+  

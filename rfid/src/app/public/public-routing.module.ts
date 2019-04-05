@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent } from './public.component';
 import { CourslistComponent } from './courslist/courslist.component';
 import { CoursdetailComponent } from './coursdetail/coursdetail.component';
+import { TarifComponent } from './tarif/tarif.component';
 
 const routes: Routes = [
   {path: "", component:PublicComponent, children: [
     {path:"cours", component: CourslistComponent},
-    {path:"abonnement", component: CourslistComponent},
+    {path:"abonnements", component: TarifComponent},
     {path:"cours/:id", component: CoursdetailComponent},
  ]}
 ];
