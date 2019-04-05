@@ -1,0 +1,75 @@
+<div>
+  <h1>Inscription nouvel adhérent</h1>
+  <p>Admin: [placeholder]</p>
+  <!-- Horizontal stepper -->
+  <mat-horizontal-stepper linear #stepper>
+    <!-- Step 1 -->
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+          <ng-template matStepLabel>Coordonnées</ng-template>
+          <!-- Firstname -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="firstname" placeholder="Prénom" required>
+          </mat-form-field>
+          <!-- Lastname -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="lastname" placeholder="Nom" required>
+          </mat-form-field>
+          <!-- Address -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="address" placeholder="Adresse" required>
+          </mat-form-field>
+          <!-- Postcode -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="postcode" placeholder="Code postal" (keypress)="numberOnly($event)" required>
+          </mat-form-field>
+          <!-- City -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="city" placeholder="Ville" required>
+          </mat-form-field>
+          <!-- Number -->
+          <mat-form-field class="tp-full-width">
+            <input matInput formControlName="number" placeholder="Numéro de téléphone" (keypress)="numberOnly($event)" required>
+          </mat-form-field>
+          <!-- Subscription -->
+          <mat-form-field class="tp-full-width">
+              <mat-select formControlName="subscription" name="subscription" placeholder="Type d'abonnement">
+                <mat-option
+                  *ngFor="let type of types"
+                  [value]="type">{{ type }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <!-- Checkbox -->
+            <mat-checkbox class="tp-margin" formControlName="checkbox" required>L'adhérent reconnaît avoir lu les CVG</mat-checkbox>
+          <!-- Button -->
+          <div>
+            <button mat-button matStepperNext>Next</button>
+            <!-- <button type="submit" mat-button>Envoyer</button> -->
+          </div>
+        </form>
+    </mat-step>
+    <!-- Step 2 -->
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
+          <ng-template matStepLabel>Badge</ng-template>
+          <mat-form-field class="tp-full-width">
+              <input matInput formControlName="badge" placeholder="Badge" (keypress)="numberOnly($event)" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+            <!-- <button type="submit" mat-button>Envoyer</button> -->
+          </div>
+        </form>
+    </mat-step>
+    <!-- Step 3 -->
+    <mat-step>
+        <ng-template matStepLabel>Fin</ng-template>
+          Inscription terminée!
+        <div>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button type="button" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit()">Envoyer</button>
+        </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

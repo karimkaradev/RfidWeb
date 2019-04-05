@@ -16,6 +16,7 @@ import { MaterialModule } from './material/material.module';
 import { ClientComponent } from './client/client.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TestComponent } from './test/test/test.component';
+import { RegisterComponent } from './register/register.component';
 
 
 export function tokenGetter() {
@@ -38,7 +39,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     HomeComponent,
     LoginComponent,
     TestComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

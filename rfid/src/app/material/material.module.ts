@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule, MatNativeDateModule,
-  MatIconModule, MatSidenavModule,
-  MatListModule, MatToolbarModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCardModule, MatFormFieldControl
+  MatIconModule, MatSidenavModule, MatListModule,
+  MatToolbarModule, MatFormFieldModule, MatSelectModule, 
+  MatInputModule, MatCardModule, MatFormFieldControl, 
+  MatStepperModule, MatCheckboxModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatStepperModule,
+    MatCheckboxModule
         ],
 
   exports: [
@@ -38,7 +42,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatSelectModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatStepperModule,
+    MatCheckboxModule
   ],
 })
 export class MaterialModule { }
