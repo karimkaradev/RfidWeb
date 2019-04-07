@@ -12,4 +12,8 @@ export class AbonnementsService {
   getAbonnement() {
     return this.http.get<any> (this.host + '/api/TypeCours');
   }
+  postAbonnement() {
+    const test= {libelle:'uigfdgg'};
+    return this.http.post<any> (this.host + '/api/TypeCours',test);
+  }
 }

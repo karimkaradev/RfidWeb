@@ -19,7 +19,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
 import { ShowIfLoggedInDirective } from './show-if-logged-in.directive';
 import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { IfRoleDirective } from './auth/if-role.directive';
+import { showIfRoleDirective } from './show-if-role.directive';
 import { ResponsiveDirective } from './directive/responsive.directive';
 import { MediaqueryComponent } from './mediaquery/mediaquery.component';
 import { DecouverteComponent } from './decouverte/decouverte.component';
@@ -46,7 +46,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     TestComponent,
     FooterComponent,
     ShowIfLoggedInDirective,
-    IfRoleDirective,
+    showIfRoleDirective,
     ResponsiveDirective,
     MediaqueryComponent,
     DecouverteComponent

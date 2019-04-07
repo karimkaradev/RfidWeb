@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { of as observableOf } from 'rxjs';
+import { of as observableOf, Observable } from 'rxjs';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { files } from '../assets/menu-data';
-import { AuthService } from './auth/+state';
+import { AuthService, AuthQuery } from './auth/+state';
 
 
 /** File node data with nested structure. */
@@ -35,9 +35,6 @@ export interface TreeNode {
 
 export class AppComponent implements OnInit {
 
-  isAuthentified = false;
-
-
 
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
   treeControl: FlatTreeControl<TreeNode>;
@@ -47,10 +44,14 @@ export class AppComponent implements OnInit {
 
   /** The MatTreeFlatDataSource connects the control and flattener to provide data. */
   dataSource: MatTreeFlatDataSource<FileNode, TreeNode>;
+  
+  name$: Observable<string>;
 
 
   constructor(private jwtHelper: JwtHelperService,
-              private router: Router, private authService: AuthService) {
+              private router: Router,
+              private authService:AuthService,
+              private authQuery:AuthQuery ) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -63,7 +64,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.isAuthentified = this.isUserAuthenticated();
+    this.name$ = this.authQuery.name$;
   }
 
 

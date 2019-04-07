@@ -59,7 +59,11 @@
                 ><i class="fas fa-user icons"></i></a>
               <a *showIfLoggedIn='true'mat-list-item (click)="logOut2()"
                 ><i class="far fa-window-close icons"></i></a>
-            </mat-toolbar-row>
+           
+            <mat-list-item *showIfLoggedIn='true'>
+              {{ name$ | async}}
+            </mat-list-item>
+          </mat-toolbar-row>
           </mat-toolbar>
       <router-outlet></router-outlet>
       <app-footer></app-footer>

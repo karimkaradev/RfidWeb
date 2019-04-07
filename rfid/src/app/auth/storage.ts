@@ -1,6 +1,7 @@
 const SESSION_KEY = 'session';
 
 export function getSession() {
+
   const session = localStorage.getItem(SESSION_KEY);
   return session ? JSON.parse(session) : {};
 }

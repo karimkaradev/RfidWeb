@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
-
-
-
+  
 
 }

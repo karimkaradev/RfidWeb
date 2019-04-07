@@ -21,13 +21,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      userMail: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
 
-  login2(form){
+ /* login2(form){
  
 
     this.submitted = true;
@@ -49,9 +49,11 @@ export class LoginComponent implements OnInit {
       console.log(err);
       this.submitted = true;
     });
-  }
+  }*/
 login(form) {
+ 
   this.authService.login(form).subscribe();
+  
 }
   onCancel() {
 

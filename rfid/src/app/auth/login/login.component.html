@@ -3,7 +3,7 @@
       <h2>Mon espace personnel</h2>
     </div>
     <mat-card  fxLayout="column" fxLayoutAlign="center center" class="login-card" fxFlex="70" >
-        <form [formGroup]="myForm" (ngSubmit)="login(myForm)">
+        <form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">
           <mat-card-content fxLayout="column " fxLayoutAlign="center center" fxLayoutGap="10px">
   
               <mat-form-field>
@@ -12,7 +12,7 @@
                     type="email"
                     matInput
                     name="email"
-                    formControlName="email"
+                    formControlName="userMail"
                     placeholder="Votre adresse email"
                     required
                   />
@@ -32,7 +32,7 @@
           </mat-card-content>
           <mat-card-actions>
   
-              <button mat-flat-button color="warn" [disabled]="!myForm.valid" (click)="login(myForm)">
+              <button mat-flat-button color="warn" [disabled]="!myForm.valid" >
                   Connexion
                 </button>
             <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>

@@ -7,7 +7,7 @@ import { AuthQuery } from './auth/+state/auth.query';
 @Directive({ selector: '[showIfLoggedIn]' })
 export class ShowIfLoggedInDirective implements OnInit, OnDestroy {
   subscription: Subscription;
-  @Input() showIfLoggedIn: boolean;
+  @Input("showIfLoggedIn") showIfLoggedIn: boolean;
 
   constructor(private templateRef: TemplateRef<any>,
               private viewContainer: ViewContainerRef,

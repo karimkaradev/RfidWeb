@@ -2,15 +2,21 @@ import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 import * as storage from '../storage';
 
+
+
 export interface AuthState {
   token: string;
   name: string;
+  roles:string[];
+  isValid:boolean;
 }
 
 export function createInitialSessionState(): AuthState {
   return {
     token: null,
     name: null,
+    roles:null,
+    isValid:false,
     ...storage.getSession(),
   };
 }
@@ -22,13 +28,6 @@ export class AuthStore extends Store<AuthState> {
     super(createInitialSessionState());
   }
 
-  login(session: AuthState) {
-    this.update(session);
-    storage.saveSession(session);
-  }
-
-  logout() {
-    storage.clearSession();
-    this.update(createInitialSessionState());
-  }
+ 
+  
 }
