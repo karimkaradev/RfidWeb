@@ -66,5 +66,8 @@ export class HomeComponent implements OnInit {
     this.matdialog.open(DecouverteComponent, {disableClose:true})
   }
 
+  test(){
+    this.matdialog.open(HomeComponent, {disableClose:true})
+  }
 
 }

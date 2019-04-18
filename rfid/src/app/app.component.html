@@ -4,6 +4,7 @@
     <!-- SIDEBAR -->
     <mat-sidenav #drawer mode="side" fxFlex="300px" role="navigation">
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <ng-template *showIfRole="admin">
         <mat-tree-node
           *matTreeNodeDef="let node"
           matTreeNodeToggle
@@ -12,7 +13,7 @@
           <button mat-icon-button disabled></button>
           <a [routerLink]="node.type" >{{ node.name }}</a>
         </mat-tree-node>
-
+      </ng-template>
         <mat-tree-node
           *matTreeNodeDef="let node; when: hasChild"
           matTreeNodePadding

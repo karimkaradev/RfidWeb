@@ -1,0 +1,736 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>rfid documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">rfid documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>LoginComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/auth/login/login.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-login</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./login.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./login.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#myForm">myForm</a>
+                            </li>
+                            <li>
+                                <a href="#submitted">submitted</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCancel">onCancel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, jwtService: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/auth/login/login.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwtService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <b>
+                            login
+                        </b>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/auth/login/login.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/auth/login/login.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                        <b>
+                            onCancel
+                        </b>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/auth/login/login.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="myForm"></a>
+                        <span class="name">
+                            <b>
+                            myForm</b>
+                            <a href="#myForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/auth/login/login.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitted"></a>
+                        <span class="name">
+                            <b>
+                            submitted</b>
+                            <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/auth/login/login.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { NgForm, Validators, FormGroup, FormBuilder, FormControl } from &#x27;@angular/forms&#x27;;
+import { AuthenticationService } from &#x27;../../_services/jwt.service&#x27;;
+import { Users } from &#x27;../../models/users&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../+state&#x27;;
+
+@Component({
+  selector: &#x27;app-login&#x27;,
+  templateUrl: &#x27;./login.component.html&#x27;,
+  styleUrls: [&#x27;./login.component.scss&#x27;]
+})
+export class LoginComponent implements OnInit {
+
+  myForm: FormGroup;
+  submitted &#x3D; false;
+
+  constructor(private fb: FormBuilder, private router: Router,
+              private jwtService: AuthenticationService,
+              private authService: AuthService ) { }
+
+  ngOnInit() {
+    this.myForm &#x3D; this.fb.group({
+      userMail: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      password: [&#x27;&#x27;, [Validators.required, Validators.minLength(4)]]
+    });
+  }
+
+
+ /* login2(form){
+ 
+
+    this.submitted &#x3D; true;
+    console.log(form.value.password);
+
+    const username &#x3D; form.value.email;
+    const password &#x3D; form.value.password;
+
+    const user: Users &#x3D; new Users(username, password);
+
+    this.jwtService.onLogin(user).subscribe(response &#x3D;&gt; {
+      // tslint:disable-next-line:no-string-literal
+      const token &#x3D; response.body[&#x27;token&#x27;];
+
+      this.jwtService.saveToken(token);
+      this.submitted &#x3D; false;
+      this.router.navigate([&#x27;/client&#x27;]);
+    }, err &#x3D;&gt; {
+      console.log(err);
+      this.submitted &#x3D; true;
+    });
+  }*/
+login(form) {
+ 
+  this.authService.login(form).subscribe();
+  
+}
+  onCancel() {
+
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div fxFlex&#x3D;&quot;80&quot; class&#x3D;&quot;blue&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot; fxFlex.xs&#x3D;&quot;90&quot;&gt; 
+    &lt;div fxFlex&#x3D;&quot;20&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+      &lt;h2&gt;Mon espace personnel&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;mat-card  fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot; class&#x3D;&quot;login-card&quot; fxFlex&#x3D;&quot;70&quot; &gt;
+        &lt;form [formGroup]&#x3D;&quot;myForm&quot; (ngSubmit)&#x3D;&quot;login(myForm.value)&quot;&gt;
+          &lt;mat-card-content fxLayout&#x3D;&quot;column &quot; fxLayoutAlign&#x3D;&quot;center center&quot; fxLayoutGap&#x3D;&quot;10px&quot;&gt;
+  
+              &lt;mat-form-field&gt;
+                  &lt;input
+                    id&#x3D;&quot;email&quot;
+                    type&#x3D;&quot;email&quot;
+                    matInput
+                    name&#x3D;&quot;email&quot;
+                    formControlName&#x3D;&quot;userMail&quot;
+                    placeholder&#x3D;&quot;Votre adresse email&quot;
+                    required
+                  /&gt;
+                &lt;/mat-form-field&gt;
+
+                &lt;mat-form-field&gt;
+                    &lt;input
+                      id&#x3D;&quot;password&quot;
+                      matInput
+                      name&#x3D;&quot;password&quot;
+                      formControlName&#x3D;&quot;password&quot;
+                      placeholder&#x3D;&quot;Votre mot de passe&quot;
+                      required
+                    /&gt;
+                  &lt;/mat-form-field&gt;
+  
+          &lt;/mat-card-content&gt;
+          &lt;mat-card-actions&gt;
+  
+              &lt;button mat-flat-button color&#x3D;&quot;warn&quot; [disabled]&#x3D;&quot;!myForm.valid&quot; &gt;
+                  Connexion
+                &lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; mat-raised-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onCancel()&quot;&gt;Annuler&lt;/button&gt;
+          &lt;/mat-card-actions&gt;
+        &lt;/form&gt;
+      &lt;/mat-card&gt;
+      &lt;div fxFlex&#x3D;&quot;20&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+          &lt;p&gt;Mot de passe oublié ?&lt;/p&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./login.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  min-height: 80vh;
+  //background: url(&#x27;../../../assets/images/image.jpg&#x27;);
+  //background-size: cover;
+ flex-direction: column;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0%;
+    color: #FFF;
+}
+
+h2{
+  font-weight: normal;
+}
+
+p{
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+
+.login-card{
+  min-width: 70%;
+  background-color: rgba(240, 240, 240, 0.95);
+  border-radius: 20px 20px 20px 20px;
+}
+
+.blue{
+  min-width: 90%;
+  background-color: rgba(33,33,33, 0.9);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 0 10px 2px rgba(206, 192, 161, 0.9);
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div fxFlex="80" class="blue" fxLayout="column" fxLayoutAlign="center center" fxFlex.xs="90">     <div fxFlex="20" fxLayoutAlign="center center">      <h2>Mon espace personnel</h2>    </div>    <mat-card  fxLayout="column" fxLayoutAlign="center center" class="login-card" fxFlex="70" >        <form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">          <mat-card-content fxLayout="column " fxLayoutAlign="center center" fxLayoutGap="10px">                <mat-form-field>                  <input                    id="email"                    type="email"                    matInput                    name="email"                    formControlName="userMail"                    placeholder="Votre adresse email"                    required                  />                </mat-form-field>                <mat-form-field>                    <input                      id="password"                      matInput                      name="password"                      formControlName="password"                      placeholder="Votre mot de passe"                      required                    />                  </mat-form-field>            </mat-card-content>          <mat-card-actions>                <button mat-flat-button color="warn" [disabled]="!myForm.valid" >                  Connexion                </button>            <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>          </mat-card-actions>        </form>      </mat-card>      <div fxFlex="20" fxLayoutAlign="center center">          <p>Mot de passe oublié ?</p>        </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendrierCoursComponent', 'selector': 'app-calendrier-cours'},{'name': 'ClientComponent', 'selector': 'app-client'},{'name': 'CoursdetailComponent', 'selector': 'app-coursdetail'},{'name': 'CourslistComponent', 'selector': 'app-courslist'},{'name': 'DecouverteComponent', 'selector': 'app-decouverte'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MediaqueryComponent', 'selector': 'app-mediaquery'},{'name': 'MesCoursComponent', 'selector': 'app-mes-cours'},{'name': 'MonCompteComponent', 'selector': 'app-mon-compte'},{'name': 'PublicComponent', 'selector': 'app-public'},{'name': 'TarifComponent', 'selector': 'app-tarif'},{'name': 'TestComponent', 'selector': 'app-test'}];
+    var DIRECTIVES = [{'name': 'ResponsiveDirective', 'selector': '[Responsive]'},{'name': 'ShowIfLoggedInDirective', 'selector': '[showIfLoggedIn]'},{'name': 'showIfRoleDirective', 'selector': '[showIfRole]'}];
+    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

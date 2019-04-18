@@ -66,7 +66,7 @@ const jwtModuleOptions: JwtModuleOptions = {
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
   entryComponents:[
-    DecouverteComponent
+    DecouverteComponent,HomeComponent
   ],
 
   providers: [JwtHelperService, AuthGardService],

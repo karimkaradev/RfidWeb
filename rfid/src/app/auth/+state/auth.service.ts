@@ -13,8 +13,8 @@ import * as storage from '../storage';
     providedIn: 'root'
 })
 export class AuthService {
-    private host = 'https://localhost:5000/api';
-    private host2 = 'http://192.168.1.174:58000/api';
+    private host2 = 'https://localhost:5000/api';
+    private host = 'http://192.168.1.174:58000/api';
     jwtToken: string;
     routeNavigation: string;
     role = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role';

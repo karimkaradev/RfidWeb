@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { of as observableOf, Observable } from 'rxjs';
+import { of as observableOf, Observable, Subject, Subscription } from 'rxjs';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { files } from '../assets/menu-data';
+import { files, files2 } from '../assets/menu-data';
 import { AuthService, AuthQuery } from './auth/+state';
+import { tap } from 'rxjs/operators';
 
 
 /** File node data with nested structure. */
@@ -46,8 +47,8 @@ export class AppComponent implements OnInit {
   dataSource: MatTreeFlatDataSource<FileNode, TreeNode>;
   
   name$: Observable<string>;
-
-
+  roles$: Observable<string[]>;
+subscription:Subscription;
   constructor(private jwtHelper: JwtHelperService,
               private router: Router,
               private authService:AuthService,
@@ -65,6 +66,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.name$ = this.authQuery.name$;
+    this.subscription=this.authQuery.roles$.subscribe(roles=>this.menuRoles(roles));
   }
 
 
@@ -115,5 +117,11 @@ export class AppComponent implements OnInit {
 }
 logOut2() {
   this.authService.logout();
+}
+menuRoles(roles){
+if(roles){
+  this.dataSource.data = files2;
+}
+
 }
 }
